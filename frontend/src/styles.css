@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@layer base {
+  :root{
+    /* Paleta: preto -> azul escuro, um pouco claro para leitura */
+    --bg-900: #020617; /* quase preto */
+    --bg-800: #072033; /* azul escuro legível */
+    --surface: #0b2a3d;
+    --muted: #98bfcf;
+    --text: #e6f7ff;
+    --accent: #4da6ff;
+    --accent-600: #2e86ff;
+    --border: rgba(255,255,255,0.06);
+    --focus: rgba(77,166,255,0.16);
+  }
+
+  /* fundo e tipografia base */
+  html, body, #root {
+    height: 100%;
+    background: linear-gradient(180deg, var(--bg-900), var(--bg-800));
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-800);
+  }
+
+  /* links e ênfase */
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  a:hover { color: var(--accent-600); text-decoration: underline; }
+
+  /* superfícies, inputs e controles */
+  .card, .panel, input, textarea, select, button {
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+    background-color: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: .5rem;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: var(--muted);
+    opacity: 0.95;
+  }
+
+  button {
+    background-image: linear-gradient(180deg, var(--accent), var(--accent-600));
+    color: #021623;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+  }
+
+  /* foco acessível */
+  :focus {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--focus);
+  }
+
+  /* cabeçalhos, textos e tabelas */
+  h1,h2,h3,h4,h5,h6, p, span, li {
+    color: var(--text);
+  }
+
+  table {
+    border-collapse: collapse;
+    color: var(--text);
+  }
+  th, td {
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    padding: .5rem .75rem;
+  }
+
+  /* scroll estilizado */
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px;
+    border: 3px solid rgba(7,27,40,0.6);
+  }
+  ::-webkit-scrollbar-track { background: transparent; }
+
+  /* pequenas melhorias para forms/icons */
+  input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
+  img.invert-for-dark { filter: brightness(0.95) contrast(1.05); }
+}
