@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+@import 'ngx-toastr/toastr';
 
 @layer base {
   :root{
@@ -93,4 +94,77 @@
   /* pequenas melhorias para forms/icons */
   input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
   img.invert-for-dark { filter: brightness(0.95) contrast(1.05); }
+}
+
+
+/* src/styles.css */
+
+/*
+   ================================================
+   ESTILOS PERSONALIZADOS PARA NGX-TOASTR
+   ================================================
+*/
+
+/* Estilo Base da Caixa de Notificação */
+.toast {
+    border-radius: 10px !important; /* Cantos mais arredondados */
+    padding: 15px !important;
+    opacity: 0.95 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Sombra mais profunda */
+}
+
+/* Estilo do Título e Mensagem */
+.toast-title {
+    font-weight: 700 !important; /* Título em negrito */
+    font-size: 1.1em !important;
+    margin-bottom: 5px !important;
+}
+
+.toast-message {
+    font-size: 1em !important;
+}
+
+/* ------------------------------------------------ */
+/* 1. TOAST DE SUCESSO (Verde) */
+/* ------------------------------------------------ */
+.toast-success {
+    background-color: #4CAF50 !important; /* Um verde vibrante */
+    color: #ffffff !important;
+}
+
+/* 2. TOAST DE ERRO (Vermelho) */
+.toast-error {
+    background-color: #F44336 !important; /* Um vermelho forte */
+    color: #ffffff !important;
+}
+
+/* 3. TOAST DE AVISO (Laranja/Amarelo) */
+.toast-warning {
+    background-color: #FF9800 !important; /* Um laranja distinto */
+    color: #ffffff !important;
+}
+
+/* 4. TOAST DE INFORMAÇÃO (Azul) */
+.toast-info {
+    background-color: #2196F3 !important; /* Um azul limpo */
+    color: #ffffff !important;
+}
+
+/* ------------------------------------------------ */
+/* Estilo da Barra de Progresso (se ativada no app.config.ts) */
+/* ------------------------------------------------ */
+.toast-progress {
+    height: 5px !important;
+    background-color: rgba(255, 255, 255, 0.4) !important; /* Branco semi-transparente */
+}
+
+/* Ícone de Fechar (o 'X') */
+.toast-close-button {
+    text-shadow: none !important;
+    color: #ffffff !important;
+    opacity: 0.8 !important;
+}
+
+.toast-close-button:hover {
+    opacity: 1 !important;
 }
